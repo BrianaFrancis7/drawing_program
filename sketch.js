@@ -1,5 +1,4 @@
 
-
 function circle(x, y, diameter) {
   ellipse(x, y, diameter, diameter);
 }
@@ -14,6 +13,23 @@ function bullseye(x, y, d, nRings, color1, color2) {
     circle(x, y, (2/3)*d);
     fill(color3);
     circle(x, y, (1/3)*d);
+}
+
+function polkaDots(color1, color2) {
+  var x = 0;
+  var y = 0;
+  var dotSize = 30;
+  noStroke();
+  background(color1);
+  while(y < height+dotSize) {
+    while(x < width+dotSize) {
+      fill(color2);
+      circle(x, y, dotSize);
+      x = x + 2*dotSize;
+    }
+    x = 0;
+    y = y + 2*dotSize;
+  }
 }
 
 function chicken(x, y) {
@@ -55,6 +71,7 @@ var myBlue = 255;
 
 function setup() {
   createCanvas(640, 480);
+  polkaDots("magenta", "cyan");
 }
 
 function draw() {
