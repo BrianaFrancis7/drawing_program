@@ -4,6 +4,18 @@ function circle(x, y, diameter) {
   ellipse(x, y, diameter, diameter);
 }
 
+// Draw a bullseye with 3 rings. Doesn't use "nRings" yet,
+// can you fix it?
+function bullseye(x, y, d, nRings, color1, color2) {
+    noStroke();
+    fill(color1);
+    circle(x, y, d);
+    fill(color2);
+    circle(x, y, (2/3)*d);
+    fill(color3);
+    circle(x, y, (1/3)*d);
+}
+
 function chicken(x, y) {
   
   stroke(0);
@@ -61,5 +73,6 @@ function draw() {
 }
 
 function mousePressed() {
-  chicken(mouseX, mouseY);
+  //chicken(mouseX, mouseY);
+  bullseye(mouseX, mouseY, 30, 3, "red", "blue");
 }
